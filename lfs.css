@@ -1,0 +1,264 @@
+/* BLFS Book Modern Stylesheet
+   Created by: AnmiTaliDev
+   Updated: 2025-02-08 16:07:35 UTC
+*/
+
+:root {
+  /* Color Palette */
+  --blfs-primary: #2b3238;
+  --blfs-secondary: #586374;
+  --blfs-accent: #3584e4;
+  --blfs-bg: #ffffff;
+  --blfs-text: #2b3238;
+  
+  /* Links */
+  --blfs-link: #0066cc;
+  --blfs-link-hover: #003d99;
+  --blfs-link-visited: #551a8b;
+  
+  /* UI Elements */
+  --blfs-header-bg: #f6f8fa;
+  --blfs-code-bg: #f8f9fa;
+  --blfs-border: #e1e4e8;
+  --blfs-shadow: rgba(0, 0, 0, 0.05);
+  
+  /* Status Colors */
+  --blfs-success: #2da44e;
+  --blfs-warning: #b35900;
+  --blfs-error: #cf222e;
+  
+  /* Typography */
+  --blfs-font-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif;
+  --blfs-font-mono: 'SF Mono', 'Cascadia Code', 'Source Code Pro', Consolas, monospace;
+  --blfs-font-size-base: 16px;
+  --blfs-line-height: 1.6;
+  
+  /* Spacing */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+}
+
+/* Base Styles */
+body {
+  font-family: var(--blfs-font-main);
+  font-size: var(--blfs-font-size-base);
+  line-height: var(--blfs-line-height);
+  color: var(--blfs-text);
+  background: var(--blfs-bg);
+  margin: 0;
+  padding: var(--space-md);
+}
+
+/* Typography Enhancement */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--blfs-primary);
+  margin: var(--space-lg) 0 var(--space-md);
+  line-height: 1.3;
+}
+
+h1 { font-size: 2rem; letter-spacing: -0.02em; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+/* Links */
+a {
+  color: var(--blfs-link);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--blfs-link-hover);
+  text-decoration: underline;
+}
+
+a:visited { color: var(--blfs-link-visited); }
+
+/* BLFS Book Structure */
+.book {
+  max-width: 1200px;
+  margin: 0 auto;
+  background: var(--blfs-bg);
+  box-shadow: 0 2px 8px var(--blfs-shadow);
+  border-radius: 8px;
+  padding: var(--space-xl);
+}
+
+.book .titlepage {
+  background: var(--blfs-header-bg);
+  border-radius: 6px;
+  padding: var(--space-lg);
+  margin-bottom: var(--space-xl);
+  text-align: center;
+}
+
+/* Package Sections */
+.package {
+  background: var(--blfs-header-bg);
+  border-radius: 6px;
+  padding: var(--space-lg);
+  margin: var(--space-lg) 0;
+  border-left: 4px solid var(--blfs-accent);
+}
+
+.installation, .configuration, .commands {
+  background: var(--blfs-bg);
+  border: 1px solid var(--blfs-border);
+  border-radius: 6px;
+  padding: var(--space-md);
+  margin: var(--space-md) 0;
+}
+
+/* Command Blocks */
+pre {
+  background: var(--blfs-code-bg);
+  border: 1px solid var(--blfs-border);
+  border-radius: 6px;
+  padding: var(--space-md);
+  margin: var(--space-md) 0;
+  overflow-x: auto;
+  font-family: var(--blfs-font-mono);
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+pre.userinput {
+  border-left: 4px solid var(--blfs-success);
+}
+
+pre.root {
+  border-left: 4px solid var(--blfs-error);
+}
+
+/* Admonitions */
+div.important, div.warning, div.caution, div.note, div.tip {
+  border-radius: 6px;
+  padding: var(--space-md) var(--space-lg);
+  margin: var(--space-lg) 0;
+  background: var(--blfs-header-bg);
+  border: 1px solid var(--blfs-border);
+  position: relative;
+}
+
+div.warning, div.caution {
+  border-left: 4px solid var(--blfs-warning);
+}
+
+div.important {
+  border-left: 4px solid var(--blfs-error);
+}
+
+div.note, div.tip {
+  border-left: 4px solid var(--blfs-success);
+}
+
+/* Navigation Enhancement */
+.navheader, .navfooter {
+  background: var(--blfs-header-bg);
+  padding: var(--space-md);
+  margin: var(--space-md) 0;
+  border-radius: 6px;
+  border: 1px solid var(--blfs-border);
+}
+
+.navheader ul, .navfooter ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Tables */
+.table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  margin: var(--space-lg) 0;
+}
+
+.table th, .table td {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--blfs-border);
+}
+
+.table th {
+  background: var(--blfs-header-bg);
+  font-weight: 600;
+}
+
+/* Lists */
+.itemizedlist ul {
+  padding-left: var(--space-lg);
+  list-style: disc;
+}
+
+.orderedlist ol {
+  padding-left: var(--space-lg);
+}
+
+/* Feature Indicators with Modern Touch */
+.feature-ssp { color: #8B2500; font-weight: 500; }
+.feature-aslr { color: #3A5FCD; font-weight: 500; }
+.feature-pax { color: #000080; font-weight: 500; }
+.feature-hardened_tmp { color: #d02090; font-weight: 500; }
+.feature-warnings { color: #668b8b; font-weight: 500; }
+.feature-misc { color: #bc8f8f; font-weight: 500; }
+.feature-blowfish { color: #8E6B23; font-weight: 500; }
+
+/* Print Optimization */
+@media print {
+  .book {
+    box-shadow: none;
+  }
+  
+  pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  :root {
+    --blfs-font-size-base: 14px;
+  }
+  
+  .book {
+    padding: var(--space-md);
+  }
+  
+  .navheader ul, .navfooter ul {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  pre {
+    font-size: 0.85em;
+  }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --blfs-bg: #0d1117;
+    --blfs-text: #c9d1d9;
+    --blfs-primary: #e6edf3;
+    --blfs-secondary: #8b949e;
+    --blfs-header-bg: #161b22;
+    --blfs-code-bg: #161b22;
+    --blfs-border: #30363d;
+    --blfs-link: #58a6ff;
+    --blfs-link-hover: #79c0ff;
+    --blfs-link-visited: #bc8cff;
+  }
+  
+  .book {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+}
